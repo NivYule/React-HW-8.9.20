@@ -10,10 +10,8 @@ import Filter from "../../filter";
 import { StarColors } from "../../rank";
 import Configuration from "../../configuration";
 import { ArrowRight, ArrowLeft } from "react-bootstrap-icons";
-import { useHistory } from "react-router-dom"
 
 function MoviesPageInternal() {
-  const history = useHistory()
   const initialMovies: Array<any> | null = [];
   const initialDeletedMovies: Array<any> = [];
   const [movies, setMovies] = useState(initialMovies);
@@ -116,9 +114,9 @@ function MoviesPageInternal() {
           <Button
             className={"mr-3"}
             variant={"danger"}
-            onClick={() => history.goBack && setPageCount(pageCount - 1)}
+            onClick={() => setPageCount(pageCount - 1)}
           >
-            Prev <ArrowLeft />
+            <ArrowLeft /> Prev
           </Button>
           <Button
             variant={"success"}
